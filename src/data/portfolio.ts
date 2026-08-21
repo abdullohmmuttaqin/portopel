@@ -1,4 +1,3 @@
-// 1. Interface TypeScript (Kontrak bentuk data)
 export interface Project {
   id: string;
   title: string;
@@ -24,13 +23,12 @@ export interface Profile {
   };
 }
 
-// 2. Data Profil Riil
 export const profileData: Profile = {
   name: "Abdulloh Muhammad Muttaqin",
   initials: "AMM",
   role: "Software Engineer & Full-Stack Developer",
   location: "Indonesia",
-  about: "Mahasiswa Informatika yang berfokus pada pengembangan aplikasi Web Full-Stack, Mobile (React Native), dan Sistem Desktop. Terbiasa membangun solusi software end-to-end dengan arsitektur terstruktur.",
+  about: "Computer Science student specializing in Full-Stack Web Development, Mobile Applications (React Native), and Desktop Systems. Passionate about building end-to-end software solutions with clean, structured architecture.",
   socials: {
     github: "https://github.com/abdullohmmuttaqin",
     linkedin: "https://linkedin.com/in/abdullohmmuttaqin",
@@ -38,14 +36,13 @@ export const profileData: Profile = {
   }
 };
 
-// 3. Array Data Proyek Utama
 export const projectsData: Project[] = [
   {
     id: "showroom-app",
     title: "ShowroomApp2 - Mobile Accounting System",
     category: "mobile",
-    shortDesc: "Aplikasi pembukuan kendaraan berbasis mobile untuk manajemen transaksi showroom.",
-    fullDesc: "Dikembangkan menggunakan React Native dan Expo. Memudahkan pemilik showroom mencatat arus kas, stok kendaraan, dan laporan keuangan harian secara real-time.",
+    shortDesc: "Mobile-based vehicle bookkeeping system for showroom inventory and cash flow management.",
+    fullDesc: "Built with React Native and Expo. Empowers showroom owners to record cash flows, track vehicle inventory, and analyze daily financial reports in real-time.",
     techStack: ["React Native", "Expo", "JavaScript"],
     githubUrl: "https://github.com/abdullohmmuttaqin/ShowroomApp2",
     featured: true
@@ -54,8 +51,8 @@ export const projectsData: Project[] = [
     id: "avanti-merch",
     title: "Avanti Merch & Admin Sales Dashboard",
     category: "web",
-    shortDesc: "Platform e-commerce merchandise lengkap dengan dashboard analitik penjualan.",
-    fullDesc: "Sistem web full-stack untuk katalog produk merchandise serta panel admin untuk mengelola penjualan, stok, dan data transaksi secara terpusat.",
+    shortDesc: "Full-stack merchandise e-commerce platform with integrated admin sales analytics.",
+    fullDesc: "End-to-end web system for merchandise cataloging featuring a centralized admin panel to manage product stock, orders, and sales performance data.",
     techStack: ["PHP", "MySQL", "Bootstrap", "JavaScript"],
     githubUrl: "https://github.com/abdullohmmuttaqin/avanti-merch-dashboard",
     featured: true
@@ -64,8 +61,8 @@ export const projectsData: Project[] = [
     id: "toko-sarung",
     title: "Toko Sarung Inventory & Sales Manager",
     category: "desktop",
-    shortDesc: "Aplikasi desktop pembukuan dan manajemen stok barang toko sarung.",
-    fullDesc: "Aplikasi desktop berbasis Java Swing dan SQLite untuk pencatatan transaksi toko ritel secara cepat, efisien, dan offline-first.",
+    shortDesc: "Desktop bookkeeping and stock management application for retail stores.",
+    fullDesc: "Offline-first desktop application developed with Java Swing and SQLite for rapid, efficient transaction recording and inventory control.",
     techStack: ["Java", "Java Swing", "SQLite"],
     githubUrl: "https://github.com/abdullohmmuttaqin/toko-sarung-app",
     featured: false

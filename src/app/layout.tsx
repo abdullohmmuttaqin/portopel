@@ -36,7 +36,7 @@ export default function RootLayout({
 }>) {
   return (
     // Memastikan atribut menggunakan className (BUKAN class)
-    <html lang="id" className={`${playfair.variable} ${lato.variable} ${jetbrains.variable}`}>
+    <html lang="en" className={`${playfair.variable} ${lato.variable} ${jetbrains.variable}`}>
       <body className="antialiased selection:bg-[#39FF88] selection:text-[#0B132B]">
         {children}
       </body>
