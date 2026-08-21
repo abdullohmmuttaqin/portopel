@@ -35,8 +35,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="id" class={`${playfair.variable} ${lato.variable} ${jetbrains.variable}`}>
-      <body class="antialiased selection:bg-[#39FF88] selection:text-[#0B132B]">
+    // PERBAIKAN: Mengubah `class` menjadi `className` di tag <html> dan <body>
+    <html lang="id" className={`${playfair.variable} ${lato.variable} ${jetbrains.variable}`}>
+      <body className="antialiased selection:bg-[#39FF88] selection:text-[#0B132B]">
         {children}
       </body>
     </html>
