@@ -24,7 +24,7 @@ export interface Profile {
 }
 
 export const profileData: Profile = {
-  name: "Abdulloh Muhammad Muttaqin",
+  name: "Abdullah Muhammad Muttaqim",
   initials: "AMM",
   role: "Software Engineer & Full-Stack Developer",
   location: "Indonesia",
@@ -32,7 +32,7 @@ export const profileData: Profile = {
   socials: {
     github: "https://github.com/abdullohmmuttaqin",
     linkedin: "https://linkedin.com/in/abdullohmmuttaqin",
-    email: "abdullohmmuttaqin.09@gmail.com"
+    email: "abdullah.22eo10034@mhs.unugha.ac.id"
   }
 };
 

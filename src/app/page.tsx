@@ -2,6 +2,8 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import ProjectGrid from "@/components/ProjectGrid";
 import Skills from "@/components/Skills";
+import Contact from "@/components/Contact";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -10,6 +12,8 @@ export default function Home() {
       <Hero />
       <ProjectGrid />
       <Skills />
+      <Contact />
+      <Footer />
     </main>
   );
 }
