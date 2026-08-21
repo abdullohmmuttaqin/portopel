@@ -1,5 +1,6 @@
+import Image from "next/image";
 import { profileData } from "@/data/portfolio";
-import { ArrowUpRight, FileText } from "lucide-react";
+import { ArrowUpRight, FileText, MapPin } from "lucide-react";
 
 export default function Hero() {
   return (
@@ -15,25 +16,23 @@ export default function Hero() {
             Available for Opportunities
           </div>
 
-          {/* Nama Utama (Playfair Display Font) */}
+          {/* Nama Utama */}
           <h1 className="font-[family-name:var(--font-playfair)] text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-tight">
             {profileData.name}
           </h1>
 
-          {/* Role / Job Title (JetBrains Mono) */}
+          {/* Role / Job Title */}
           <p className="font-mono text-lg sm:text-xl text-[#39FF88] font-medium">
             {profileData.role}
           </p>
 
-          {/* Bio / About (Lato Font) */}
+          {/* Bio / About */}
           <p className="font-sans text-[#94A3B8] text-base sm:text-lg leading-relaxed max-w-2xl">
             {profileData.about}
           </p>
 
           {/* Action Buttons & Social Links */}
           <div className="pt-4 flex flex-wrap items-center gap-4">
-            
-            {/* CTA Button 1: Explore Work */}
             <a
               href="#projects"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#39FF88] text-[#0B132B] font-mono font-bold text-sm hover:bg-[#39FF88]/90 transition-all shadow-[0_0_20px_rgba(57,255,136,0.2)]"
@@ -42,7 +41,6 @@ export default function Hero() {
               <ArrowUpRight className="w-4 h-4" />
             </a>
 
-            {/* CTA Button 2: Download CV */}
             <a
               href="#"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#1C2541] text-white font-mono text-sm border border-white/10 hover:border-[#39FF88]/50 transition-all"
@@ -51,9 +49,8 @@ export default function Hero() {
               Download CV
             </a>
 
-            {/* Social Icons (Pakai Inline SVG Biar Aman & Bebas Error Versi) */}
+            {/* Social Icons */}
             <div className="flex items-center gap-3 ml-auto sm:ml-2">
-              {/* GitHub SVG */}
               <a
                 href={profileData.socials.github}
                 target="_blank"
@@ -66,7 +63,6 @@ export default function Hero() {
                 </svg>
               </a>
 
-              {/* LinkedIn SVG */}
               <a
                 href={profileData.socials.linkedin}
                 target="_blank"
@@ -79,19 +75,45 @@ export default function Hero() {
                 </svg>
               </a>
             </div>
-
           </div>
 
         </div>
 
-        {/* Kolom Kanan: Visual Card / Avatar Placeholder */}
+        {/* Kolom Kanan: Frame Foto Profil Mewah dengan Glow Effect */}
         <div className="lg:col-span-5 flex justify-center">
-          <div className="relative w-full max-w-sm aspect-square rounded-[2.5rem] bg-[#1C2541] border border-[#39FF88]/20 p-4 flex flex-col items-center justify-center text-center shadow-[0_0_50px_rgba(57,255,136,0.05)]">
-            <div className="w-28 h-28 rounded-full bg-[#0B132B] border-2 border-[#39FF88] flex items-center justify-center font-mono text-3xl font-bold text-[#39FF88] mb-4 shadow-[0_0_20px_rgba(57,255,136,0.3)]">
-              {profileData.initials}
+          <div className="relative group w-full max-w-md">
+            
+            {/* Ambient Background Glow Effect */}
+            <div className="absolute -inset-1 bg-gradient-to-r from-[#39FF88] to-[#1C2541] rounded-[2.5rem] blur-xl opacity-30 group-hover:opacity-60 transition duration-500"></div>
+
+            {/* Main Photo Card Container */}
+            <div className="relative w-full aspect-[4/5] rounded-[2.2rem] bg-[#1C2541] border border-[#39FF88]/30 overflow-hidden shadow-2xl">
+              <Image
+                src="/profile.jpg"
+                alt={profileData.name}
+                fill
+                priority
+                sizes="(max-width: 1024px) 100vw, 400px"
+                className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
+              />
+              
+              {/* Overlay Gradient Soft Bottom */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0B132B] via-transparent to-transparent opacity-80"></div>
+
+              {/* Floating Info Badge At Bottom */}
+              <div className="absolute bottom-6 left-6 right-6 p-4 rounded-2xl bg-[#0B132B]/80 backdrop-blur-md border border-white/10 flex items-center justify-between">
+                <div>
+                  <p className="font-mono text-sm text-white font-bold">{profileData.name}</p>
+                  <p className="font-sans text-xs text-[#39FF88] font-medium mt-0.5">{profileData.role}</p>
+                </div>
+                <div className="flex items-center gap-1 font-mono text-xs text-[#94A3B8] bg-[#1C2541] px-2.5 py-1 rounded-lg border border-white/5">
+                  <MapPin className="w-3.5 h-3.5 text-[#39FF88]" />
+                  {profileData.location}
+                </div>
+              </div>
+
             </div>
-            <p className="font-mono text-sm text-white font-semibold">{profileData.name}</p>
-            <p className="font-sans text-xs text-[#94A3B8] mt-1">📍 {profileData.location}</p>
+
           </div>
         </div>
 
