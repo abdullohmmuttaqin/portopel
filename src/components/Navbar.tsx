@@ -1,92 +1,68 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
-import { profileData } from "@/data/portfolio";
 import { Menu, X } from "lucide-react";
 
-export default function Navbar() {
-  // State untuk mengontrol buka/tutup menu hamburger di HP
-  const [isOpen, setIsOpen] = useState<boolean>(false);
+const navItems = [
+  { name: "Home", href: "#home" },
+  { name: "About", href: "#about" },
+  { name: "Projects", href: "#projects" },
+  { name: "Experience", href: "#experience" },
+  { name: "Skills", href: "#skills" },
+  { name: "Contact", href: "#contact" },
+];
 
-  const toggleMenu = () => setIsOpen(!isOpen);
+export default function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-[#0B132B]/80 backdrop-blur-xl border-b border-white/10 transition-all duration-300">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-[#0B132B]/80 backdrop-blur-md border-b border-white/5">
       <div className="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
-        
-        {/* Monogram Logo "AMM" */}
-        <Link 
-          href="/" 
-          className="group flex items-center gap-2 font-mono font-bold text-xl tracking-wider text-white"
-        >
-          <span className="w-10 h-10 rounded-xl bg-[#1C2541] border border-[#39FF88]/30 flex items-center justify-center text-[#39FF88] group-hover:border-[#39FF88] group-hover:shadow-[0_0_15px_rgba(57,255,136,0.3)] transition-all duration-300">
-            {profileData.initials}
-          </span>
-        </Link>
+        {/* Logo Monogram */}
+        <a href="#home" className="flex items-center gap-2">
+          <div className="w-10 h-10 rounded-xl bg-[#1C2541] border border-[#39FF88]/30 flex items-center justify-center text-[#39FF88] font-mono font-bold text-lg shadow-[0_0_15px_rgba(57,255,136,0.15)]">
+            AMM
+          </div>
+        </a>
 
-        {/* Desktop Navigation Menu (Tampil di Layar Sedang & Besar) */}
-        <nav className="hidden md:flex items-center gap-8 font-sans text-sm text-[#94A3B8]">
-          <a href="#about" className="hover:text-[#39FF88] transition-colors">
-            About
-          </a>
-          <a href="#projects" className="hover:text-[#39FF88] transition-colors">
-            Projects
-          </a>
-          <a href="#skills" className="hover:text-[#39FF88] transition-colors">
-            Skills
-          </a>
-          <a href="#contact" className="hover:text-[#39FF88] transition-colors">
-            Contact
-          </a>
-        </nav>
+        {/* Desktop Navigation */}
+        <div className="hidden md:flex items-center gap-8">
+          {navItems.map((item) => (
+            <a
+              key={item.name}
+              href={item.href}
+              className="text-sm font-sans text-[#94A3B8] hover:text-[#39FF88] transition-colors"
+            >
+              {item.name}
+            </a>
+          ))}
+        </div>
 
-        {/* Mobile Hamburger Button (Hanya Tampil di Layar HP / md:hidden) */}
+        {/* Mobile Hamburger Button */}
         <button
-          onClick={toggleMenu}
-          aria-label="Toggle Navigation Menu"
-          className="md:hidden p-2.5 rounded-xl bg-[#1C2541] text-[#94A3B8] hover:text-[#39FF88] border border-white/10 transition-colors"
+          onClick={() => setIsOpen(!isOpen)}
+          className="md:hidden p-2 rounded-lg bg-[#1C2541] text-[#94A3B8] hover:text-white"
+          aria-label="Toggle Menu"
         >
           {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
-
       </div>
 
-      {/* Mobile Menu Drawer Overlay */}
+      {/* Mobile Menu Drawer */}
       {isOpen && (
-        <div className="md:hidden bg-[#0B132B]/95 backdrop-blur-2xl border-b border-white/10 px-6 py-6 transition-all duration-300">
-          <nav className="flex flex-col gap-3 font-mono text-sm text-[#94A3B8]">
-            <a 
-              href="#about" 
+        <div className="md:hidden bg-[#0B132B] border-b border-white/10 px-6 py-4 flex flex-col gap-4">
+          {navItems.map((item) => (
+            <a
+              key={item.name}
+              href={item.href}
               onClick={() => setIsOpen(false)}
-              className="p-3 rounded-xl hover:bg-[#1C2541] hover:text-[#39FF88] transition-all"
+              className="text-sm font-sans text-[#94A3B8] hover:text-[#39FF88] transition-colors py-1"
             >
-              {"// About"}
+              {item.name}
             </a>
-            <a 
-              href="#projects" 
-              onClick={() => setIsOpen(false)}
-              className="p-3 rounded-xl hover:bg-[#1C2541] hover:text-[#39FF88] transition-all"
-            >
-              {"// Projects"}
-            </a>
-            <a 
-              href="#skills" 
-              onClick={() => setIsOpen(false)}
-              className="p-3 rounded-xl hover:bg-[#1C2541] hover:text-[#39FF88] transition-all"
-            >
-              {"// Skills"}
-            </a>
-            <a 
-              href="#contact" 
-              onClick={() => setIsOpen(false)}
-              className="p-3 rounded-xl hover:bg-[#1C2541] hover:text-[#39FF88] transition-all"
-            >
-              {"// Contact"}
-            </a>
-          </nav>
+          ))}
         </div>
       )}
-    </header>
+    </nav>
   );
 }
