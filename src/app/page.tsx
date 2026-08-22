@@ -1,7 +1,8 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
-import Projects from "@/components/ProjectGrid";
+import ProjectGrid from "@/components/ProjectGrid";
+import Experience from "@/components/Experience";
 import Skills from "@/components/Skills";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
@@ -12,7 +13,8 @@ export default function Home() {
       <Navbar />
       <Hero />
       <About />
-      <Projects />
+      <ProjectGrid />
+      <Experience />
       <Skills />
       <Contact />
       <Footer />
