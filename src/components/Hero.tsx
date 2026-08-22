@@ -4,7 +4,7 @@ import { ArrowUpRight, FileText, MapPin } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section id="about" className="min-h-[calc(100vh-80px)] flex items-center justify-center py-16 px-6">
+    <section id="home" className="min-h-[calc(100vh-80px)] flex items-center justify-center py-16 px-6">
       <div className="max-w-6xl w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         
         {/* Kolom Kiri: Teks & Bio */}
