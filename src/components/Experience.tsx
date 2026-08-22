@@ -11,7 +11,7 @@ const experiences = [
   },
   {
     role: "Computer Science Student & Project Lead",
-    organization: "Universitas Nahdlatul Ulama Al Ghazali (UNUGHA)",
+    organization: "Universitas Nahdlatul Ulama Al Ghazali (UNUGHA) Cilacap",
     period: "2022 - Present",
     description:
       "Building robust software architecture for academic research and practical coursework. Collaborating on system analysis, database schema design, and full-stack integration.",
