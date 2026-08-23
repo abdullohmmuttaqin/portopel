@@ -25,7 +25,7 @@ const jetbrains = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Abdulloh Muhammad Muttaqin | Portfolio",
+  title: "Abdullah Muhammad Muttaqim | Portfolio",
   description: "Software Engineer & Full-Stack Developer Portfolio",
 };
 
