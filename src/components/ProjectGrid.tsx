@@ -106,13 +106,13 @@ export default function ProjectGrid() {
             </h2>
           </div>
 
-          {/* Filter Tabs */}
+          {/* Filter Tabs dengan Efek Membal */}
           <div className="flex flex-wrap items-center gap-2">
             {categories.map((category) => (
               <button
                 key={category}
                 onClick={() => setActiveCategory(category)}
-                className={`font-mono text-xs px-4 py-2 rounded-xl border transition-all duration-300 ${
+                className={`font-mono text-xs px-4 py-2 rounded-xl border transition-all duration-150 active:scale-90 ${
                   activeCategory === category
                     ? "bg-[#39FF88] text-[#0B132B] border-[#39FF88] font-bold shadow-[0_0_15px_rgba(57,255,136,0.3)]"
                     : "bg-[#1C2541]/50 text-[#94A3B8] border-white/5 hover:border-[#39FF88]/40 hover:text-white"
@@ -131,7 +131,7 @@ export default function ProjectGrid() {
             return (
               <div
                 key={project.id}
-                className="group rounded-2xl bg-[#1C2541] border border-white/5 hover:border-[#39FF88]/40 transition-all duration-300 overflow-hidden flex flex-col justify-between hover:shadow-[0_0_30px_rgba(57,255,136,0.1)]"
+                className="group rounded-2xl bg-[#1C2541] border border-white/5 hover:border-[#39FF88]/40 active:scale-[0.98] transition-all duration-150 overflow-hidden flex flex-col justify-between hover:shadow-[0_0_30px_rgba(57,255,136,0.1)]"
               >
                 {/* Top Image Box */}
                 <div className="relative w-full h-56 bg-[#0B132B] overflow-hidden border-b border-white/5">
@@ -164,7 +164,7 @@ export default function ProjectGrid() {
                         href={project.githubUrl}
                         target="_blank"
                         rel="noreferrer"
-                        className="p-2 rounded-lg bg-[#0B132B]/80 backdrop-blur-md text-[#94A3B8] hover:text-[#39FF88] border border-white/10 transition-colors"
+                        className="p-2 rounded-lg bg-[#0B132B]/80 backdrop-blur-md text-[#94A3B8] hover:text-[#39FF88] border border-white/10 active:scale-90 transition-transform"
                         aria-label="GitHub Repo"
                       >
                         <GithubIcon className="w-4 h-4" />
@@ -175,7 +175,7 @@ export default function ProjectGrid() {
                         href={project.demoUrl}
                         target="_blank"
                         rel="noreferrer"
-                        className="p-2 rounded-lg bg-[#0B132B]/80 backdrop-blur-md text-[#94A3B8] hover:text-[#39FF88] border border-white/10 transition-colors"
+                        className="p-2 rounded-lg bg-[#0B132B]/80 backdrop-blur-md text-[#94A3B8] hover:text-[#39FF88] border border-white/10 active:scale-90 transition-transform"
                         aria-label="Live Demo"
                       >
                         <ExternalLink className="w-4 h-4" />

@@ -41,7 +41,8 @@ export default function Experience() {
               {/* Timeline Dot */}
               <div className="absolute -left-[31px] md:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-[#1C2541] border-2 border-[#39FF88] group-hover:scale-125 transition-transform" />
 
-              <div className="p-6 rounded-2xl bg-[#1C2541] border border-white/5 hover:border-[#39FF88]/30 transition-all space-y-3">
+              {/* Card Experience dengan Efek Membal */}
+              <div className="p-6 rounded-2xl bg-[#1C2541] border border-white/5 hover:border-[#39FF88]/30 active:scale-[0.98] transition-all duration-150 space-y-3">
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                   <h3 className="font-mono text-lg font-bold text-white">
                     {exp.role}
@@ -60,11 +61,12 @@ export default function Experience() {
                   {exp.description}
                 </p>
 
+                {/* Skill Badges dengan Efek Membal */}
                 <div className="flex flex-wrap gap-2 pt-2">
                   {exp.skills.map((skill, sIdx) => (
                     <span
                       key={sIdx}
-                      className="text-xs font-mono px-2.5 py-1 rounded-md bg-[#0B132B] text-[#94A3B8] border border-white/5"
+                      className="text-xs font-mono px-2.5 py-1 rounded-md bg-[#0B132B] text-[#94A3B8] border border-white/5 active:scale-95 transition-transform duration-100"
                     >
                       {skill}
                     </span>
