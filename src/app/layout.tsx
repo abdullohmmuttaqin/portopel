@@ -35,8 +35,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    // Memastikan atribut menggunakan className (BUKAN class)
-    <html lang="en" className={`${playfair.variable} ${lato.variable} ${jetbrains.variable}`}>
+    <html
+      lang="en"
+      className={`${playfair.variable} ${lato.variable} ${jetbrains.variable} scroll-smooth`}
+      data-scroll-behavior="smooth"
+    >
       <body className="antialiased selection:bg-[#39FF88] selection:text-[#0B132B]">
         {children}
       </body>
