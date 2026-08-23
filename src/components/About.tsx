@@ -1,15 +1,43 @@
+"use client";
+
+import { useState, useEffect, useRef } from "react";
 import { GraduationCap, Code2, Rocket } from "lucide-react";
 
 export default function About() {
+  const [isInView, setIsInView] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsInView(entry.isIntersecting);
+      },
+      { rootMargin: "-20% 0px -35% 0px", threshold: 0.1 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section id="about" className="py-20 px-6 bg-[#0B132B]/50 border-t border-white/5">
+    <section ref={sectionRef} id="about" className="py-20 px-6 bg-[#0B132B]/50 border-t border-white/5">
       <div className="max-w-6xl mx-auto space-y-12">
         
         {/* Header Section */}
         <div className="space-y-2">
           <p className="font-mono text-sm text-[#39FF88] uppercase tracking-wider">// BIOGRAPHY</p>
-          <h2 className="font-[family-name:var(--font-playfair)] text-3xl sm:text-4xl font-bold text-white">
+          
+          {/* Judul H2 dengan Garis Bawah Aktif Otomatis */}
+          <h2 className="relative inline-block font-[family-name:var(--font-playfair)] text-3xl sm:text-4xl font-bold text-white pb-2">
             About Me
+            <span
+              className={`absolute bottom-0 left-0 h-[3px] bg-[#39FF88] transition-all duration-500 ease-out shadow-[0_0_12px_#39FF88] ${
+                isInView ? "w-full opacity-100" : "w-0 opacity-0"
+              }`}
+            />
           </h2>
         </div>
 
