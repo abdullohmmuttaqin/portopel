@@ -20,7 +20,7 @@ export default function Navbar() {
       <div className="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
         
         {/* Logo Monogram */}
-        <a href="#home" className="flex items-center gap-2">
+        <a href="#home" className="flex items-center gap-2 active:scale-90 transition-transform duration-100">
           <div className="w-10 h-10 rounded-xl bg-[#1C2541] border border-[#39FF88]/30 flex items-center justify-center text-[#39FF88] font-mono font-bold text-lg shadow-[0_0_15px_rgba(57,255,136,0.15)]">
             AMM
           </div>
@@ -32,7 +32,7 @@ export default function Navbar() {
             <a
               key={item.name}
               href={item.href}
-              className="relative font-mono text-xs tracking-wider text-[#94A3B8] hover:text-[#39FF88] transition-colors py-2 group"
+              className="relative font-mono text-xs tracking-wider text-[#94A3B8] hover:text-[#39FF88] active:scale-95 transition-all duration-100 py-2 group"
             >
               <span className="text-[#39FF88]/50 mr-1">//</span>
               {item.name}
@@ -46,7 +46,7 @@ export default function Navbar() {
         {/* Mobile Hamburger Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden p-2 rounded-lg bg-[#1C2541] text-[#94A3B8] hover:text-[#39FF88]"
+          className="md:hidden p-2 rounded-lg bg-[#1C2541] text-[#94A3B8] hover:text-[#39FF88] active:scale-90 transition-transform duration-100"
           aria-label="Toggle Menu"
         >
           {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -61,7 +61,7 @@ export default function Navbar() {
               key={item.name}
               href={item.href}
               onClick={() => setIsOpen(false)}
-              className="relative font-mono text-sm tracking-wider text-[#94A3B8] hover:text-[#39FF88] transition-colors py-2 flex items-center gap-2 border-b border-white/5 last:border-0 group"
+              className="relative font-mono text-sm tracking-wider text-[#94A3B8] hover:text-[#39FF88] active:scale-95 transition-all duration-100 py-2 flex items-center gap-2 border-b border-white/5 last:border-0 group"
             >
               <span className="text-[#39FF88] font-bold">//</span>
               {item.name}

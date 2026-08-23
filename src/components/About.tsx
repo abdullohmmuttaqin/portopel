@@ -17,7 +17,7 @@ export default function About() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           
           {/* Card 1: Education */}
-          <div className="p-6 rounded-2xl bg-[#1C2541] border border-white/5 hover:border-[#39FF88]/30 transition-all space-y-4">
+          <div className="p-6 rounded-2xl bg-[#1C2541] border border-white/5 hover:border-[#39FF88]/30 active:scale-[0.98] transition-all duration-150 space-y-4">
             <div className="w-12 h-12 rounded-xl bg-[#39FF88]/10 text-[#39FF88] flex items-center justify-center">
               <GraduationCap className="w-6 h-6" />
             </div>
@@ -28,7 +28,7 @@ export default function About() {
           </div>
 
           {/* Card 2: Specialization */}
-          <div className="p-6 rounded-2xl bg-[#1C2541] border border-white/5 hover:border-[#39FF88]/30 transition-all space-y-4">
+          <div className="p-6 rounded-2xl bg-[#1C2541] border border-white/5 hover:border-[#39FF88]/30 active:scale-[0.98] transition-all duration-150 space-y-4">
             <div className="w-12 h-12 rounded-xl bg-[#39FF88]/10 text-[#39FF88] flex items-center justify-center">
               <Code2 className="w-6 h-6" />
             </div>
@@ -39,7 +39,7 @@ export default function About() {
           </div>
 
           {/* Card 3: Philosophy */}
-          <div className="p-6 rounded-2xl bg-[#1C2541] border border-white/5 hover:border-[#39FF88]/30 transition-all space-y-4">
+          <div className="p-6 rounded-2xl bg-[#1C2541] border border-white/5 hover:border-[#39FF88]/30 active:scale-[0.98] transition-all duration-150 space-y-4">
             <div className="w-12 h-12 rounded-xl bg-[#39FF88]/10 text-[#39FF88] flex items-center justify-center">
               <Rocket className="w-6 h-6" />
             </div>

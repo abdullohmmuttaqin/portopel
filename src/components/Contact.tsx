@@ -58,7 +58,7 @@ export default function Contact() {
           {/* Direct Email */}
           <a
             href="mailto:abdullah.22eo10034@mhs.unugha.ac.id"
-            className="group p-6 rounded-2xl bg-[#1C2541] border border-white/5 hover:border-[#39FF88]/40 transition-all space-y-4 hover:shadow-[0_0_20px_rgba(57,255,136,0.1)]"
+            className="group p-6 rounded-2xl bg-[#1C2541] border border-white/5 hover:border-[#39FF88]/40 active:scale-95 transition-all duration-150 space-y-4 hover:shadow-[0_0_20px_rgba(57,255,136,0.1)]"
           >
             <div className="w-12 h-12 rounded-xl bg-[#39FF88]/10 text-[#39FF88] flex items-center justify-center group-hover:scale-110 transition-transform">
               <Mail className="w-6 h-6" />
@@ -80,7 +80,7 @@ export default function Contact() {
             href="https://github.com/abdullohmmuttaqin"
             target="_blank"
             rel="noreferrer"
-            className="group p-6 rounded-2xl bg-[#1C2541] border border-white/5 hover:border-[#39FF88]/40 transition-all space-y-4 hover:shadow-[0_0_20px_rgba(57,255,136,0.1)]"
+            className="group p-6 rounded-2xl bg-[#1C2541] border border-white/5 hover:border-[#39FF88]/40 active:scale-95 transition-all duration-150 space-y-4 hover:shadow-[0_0_20px_rgba(57,255,136,0.1)]"
           >
             <div className="w-12 h-12 rounded-xl bg-[#39FF88]/10 text-[#39FF88] flex items-center justify-center group-hover:scale-110 transition-transform">
               <GithubIcon className="w-6 h-6" />
@@ -102,7 +102,7 @@ export default function Contact() {
             href="https://linkedin.com/in/abdullohmmuttaqin"
             target="_blank"
             rel="noreferrer"
-            className="group p-6 rounded-2xl bg-[#1C2541] border border-white/5 hover:border-[#39FF88]/40 transition-all space-y-4 hover:shadow-[0_0_20px_rgba(57,255,136,0.1)]"
+            className="group p-6 rounded-2xl bg-[#1C2541] border border-white/5 hover:border-[#39FF88]/40 active:scale-95 transition-all duration-150 space-y-4 hover:shadow-[0_0_20px_rgba(57,255,136,0.1)]"
           >
             <div className="w-12 h-12 rounded-xl bg-[#39FF88]/10 text-[#39FF88] flex items-center justify-center group-hover:scale-110 transition-transform">
               <LinkedinIcon className="w-6 h-6" />

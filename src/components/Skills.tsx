@@ -57,7 +57,7 @@ export default function Skills() {
             return (
               <div
                 key={idx}
-                className="p-6 rounded-2xl bg-[#1C2541] border border-white/5 hover:border-[#39FF88]/30 transition-all space-y-4 flex flex-col justify-between"
+                className="p-6 rounded-2xl bg-[#1C2541] border border-white/5 hover:border-[#39FF88]/30 active:scale-[0.98] transition-all duration-150 space-y-4 flex flex-col justify-between"
               >
                 <div className="space-y-4">
                   <div className="flex items-center gap-3">
@@ -73,7 +73,7 @@ export default function Skills() {
                     {cat.skills.map((skill, sIdx) => (
                       <span
                         key={sIdx}
-                        className="font-mono text-xs px-3 py-1.5 rounded-lg bg-[#0B132B] text-[#94A3B8] border border-white/5 hover:text-[#39FF88] hover:border-[#39FF88]/30 transition-colors"
+                        className="font-mono text-xs px-3 py-1.5 rounded-lg bg-[#0B132B] text-[#94A3B8] border border-white/5 hover:text-[#39FF88] hover:border-[#39FF88]/30 active:scale-95 transition-all duration-100"
                       >
                         {skill}
                       </span>
