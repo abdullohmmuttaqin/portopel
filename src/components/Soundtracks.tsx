@@ -6,25 +6,33 @@ import { Disc2 } from "lucide-react";
 const playlists = [
   {
     id: "1",
-    title: "Calm🌻🌻",
+    title: "My Hero",
     description:
-      "Base on indie/folk. A quiet sanctuary for the restless minds. Melodies of nature, tales of the streets, and honest reflections to keep you grounded.🍀☘️🌹🌻🏴‍☠️☠️Ⓐ=",
+      "More than just distortion, this is about attitude and resistance. For the freedom seekers who refuse to back down. Play it loud!",
     spotifyEmbedUrl:
-      "https://open.spotify.com/embed/playlist/0JyjJwmsAwu3Ldz6CQ8EDj?utm_source=generator&theme=0",
+      "https://open.spotify.com/embed/playlist/3bs4CAzbp9Zp4p7AXVEVzm?utm_source=generator&theme=",
   },
   {
     id: "2",
-    title: "Lost(The fall & Rise) 🍀☘️🌹🌻🌱",
+    title: "Lost(The fall & Rise)",
     description:
-      "A soundtrack for the nights we lost ourselves, and the mornings we decided to rise again. From the dust of the working class to the celebration of life. Keep growing between your cracks🍀☘️🌹🌻🏴‍☠️☠️Ⓐ=",
+      "A soundtrack for the nights we lost ourselves, and the mornings we decided to rise again. From the dust of the working class to the celebration of life. Keep growing between your cracks.",
     spotifyEmbedUrl:
       "https://open.spotify.com/embed/playlist/73GkAU8LMEJYP9Tobez91k?utm_source=generator&theme=0",
   },
   {
     id: "3",
+    title: "All Killer, No Errors",
+    description:
+      "A pure shot of adrenaline fueled by fast power chords and pop-punk anthems. When your logic hits a wall, crank up the volume, ignore the rules, and let the code flow wild.",
+    spotifyEmbedUrl:
+      "https://open.spotify.com/embed/playlist/1DLUMqDOSCczAoeOeDJYQ8?utm_source=generator&theme=",
+  },
+  {
+    id: "4",
     title: "Hard Refresh",
     description:
-      "A pure shot of adrenaline fueled by heavy riffs and brutal vocals. When your logic hits a wall, press Hard Refresh on your brain and let the code flow wild. 🍀☘️🌹🌻🏴‍☠️☠️Ⓐ=",
+      "A pure shot of adrenaline fueled by heavy riffs and brutal vocals. When your logic hits a wall, press Hard Refresh on your brain and let the code flow wild.",
     spotifyEmbedUrl:
       "https://open.spotify.com/embed/playlist/3PLhEYdH2NiQh0pfg56d1u?utm_source=generator&theme=0",
   },
@@ -79,7 +87,7 @@ export default function Soundtracks() {
         </div>
 
         {/* Playlist Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {playlists.map((pl) => (
             <div
               key={pl.id}
