@@ -23,6 +23,25 @@ function GithubIcon(props: React.SVGProps<SVGSVGElement>) {
 // Data Proyek Asli Abdullah dengan Path Gambar
 const projectsData = [
   {
+    id: "artomoro-craft",
+    title: "Artomoro Craft - Bouquet Catalog & Ordering Platform",
+    category: "Web",
+    categoryBadge: "Web Application",
+    icon: Globe,
+    description:
+      "A modern web application fully refactored using Next.js 16, React 19, and Supabase for real-time database management and custom bouquet ordering.",
+    keyFeatures: [
+      "Custom bouquet catalog",
+      "Real-time order management",
+      "Supabase DB & Authentication",
+      "Responsive Tailwind v4 UI",
+    ],
+    techStack: ["Next.js 16", "React 19", "Supabase", "Tailwind CSS", "TypeScript"],
+    githubUrl: "https://github.com/abdullohmmuttaqin/artomoro-craft",
+    demoUrl: "#",
+    image: "/projects/artomoro.png",
+  },
+  {
     id: "showroom-app",
     title: "ShowroomApp2 - Mobile Accounting System",
     category: "Mobile",
