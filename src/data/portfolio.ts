@@ -66,5 +66,15 @@ export const projectsData: Project[] = [
     techStack: ["Java", "Java Swing", "SQLite"],
     githubUrl: "https://github.com/abdullohmmuttaqin/toko-sarung-app",
     featured: false
-  }
+  },
+  {
+  id: "artomoro-craft",
+  title: "Artomoro Craft",
+  category: "web",
+  shortDesc: "Digital catalog and ordering platform for custom bouquets and handmade crafts.",
+  fullDesc: "A modern web application fully refactored using Next.js 16, React 19, and Supabase for real-time database management and authentication.",
+  techStack: ["Next.js 16", "React 19", "Supabase", "Tailwind CSS", "TypeScript"],
+  githubUrl: "https://github.com/abdullohmmuttaqin/artomoro-craft",
+  featured: true
+}
 ];
