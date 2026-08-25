@@ -41,12 +41,15 @@ export default function Hero() {
               <ArrowUpRight className="w-4 h-4" />
             </a>
 
+            {/* Tombol View CV (Akses Google Docs View-Only) */}
             <a
-              href="#"
+              href="https://docs.google.com/document/d/1r3kfcxcJbJxfZhn7dRQWUPELl8vRbi-0/edit?usp=sharing&ouid=101182324941094074483&rtpof=true&sd=true"
+              target="_blank"
+              rel="noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#1C2541] text-white font-mono text-sm border border-white/10 hover:border-[#39FF88]/50 active:scale-95 transition-all"
             >
               <FileText className="w-4 h-4 text-[#39FF88]" />
-              Download CV
+              View CV
             </a>
 
             {/* Social Icons */}
