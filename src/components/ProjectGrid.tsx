@@ -186,7 +186,7 @@ export default function ProjectGrid() {
       ([entry]) => {
         setIsInView(entry.isIntersecting);
       },
-      { rootMargin: "-20% 0px -35% 0px", threshold: 0.1 }
+      { rootMargin: "0px 0px -15% 0px", threshold: 0.1 } // Batas atas 0px agar langsung aktif pas di-scroll ke section
     );
 
     if (sectionRef.current) {
