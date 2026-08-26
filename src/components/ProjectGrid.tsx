@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { ExternalLink, Smartphone, Globe, Monitor } from "lucide-react";
+import { ExternalLink, Smartphone, Globe, Monitor, PenTool, Cpu } from "lucide-react";
 
 function GithubIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
@@ -20,8 +20,44 @@ function GithubIcon(props: React.SVGProps<SVGSVGElement>) {
   );
 }
 
+function FigmaIcon(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      {...props}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M5 5.5A3.5 3.5 0 0 1 8.5 2H12v7H8.5A3.5 3.5 0 0 1 5 5.5z" />
+      <path d="M12 2h3.5a3.5 3.5 0 1 1 0 7H12V2z" />
+      <path d="M12 12.5a3.5 3.5 0 1 1 7 0 3.5 3.5 0 1 1-7 0z" />
+      <path d="M5 19.5A3.5 3.5 0 0 1 8.5 16H12v3.5a3.5 3.5 0 1 1-7 0z" />
+      <path d="M5 12.5A3.5 3.5 0 0 1 8.5 9H12v7H8.5A3.5 3.5 0 0 1 5 12.5z" />
+    </svg>
+  );
+}
+
+// Interface pendukung untuk project data
+interface ProjectItem {
+  id: string;
+  title: string;
+  category: string;
+  categoryBadge: string;
+  icon: React.ElementType;
+  description: string;
+  keyFeatures: string[];
+  techStack: string[];
+  githubUrl?: string;
+  figmaUrl?: string;
+  demoUrl?: string;
+  image?: string;
+}
+
 // Data Proyek Asli Abdullah dengan Path Gambar
-const projectsData = [
+const projectsData: ProjectItem[] = [
   {
     id: "artomoro-craft",
     title: "Artomoro Craft - Bouquet Catalog & Ordering Platform",
@@ -58,7 +94,26 @@ const projectsData = [
     techStack: ["React Native", "Expo", "JavaScript", "AsyncStorage"],
     githubUrl: "https://github.com/abdullohmmuttaqin/ShowroomApp2",
     demoUrl: "#",
-    image: "/projects/showroom.png", // Path gambar dari folder public/projects/
+    image: "/projects/showroom.png",
+  },
+  {
+    id: "toko-sarung",
+    title: "Toko Sarung Inventory & Sales Manager",
+    category: "Desktop",
+    categoryBadge: "Desktop App",
+    icon: Monitor,
+    description:
+      "Desktop bookkeeping and stock management application crafted specifically for retail stores and local inventory workflow.",
+    keyFeatures: [
+      "Retail stock management",
+      "Sales transaction logging",
+      "Automated receipt generation",
+      "Local SQLite database storage",
+    ],
+    techStack: ["Java", "Java Swing", "SQLite"],
+    githubUrl: "https://github.com/abdullohmmuttaqin/toko-sarung-app",
+    demoUrl: "#",
+    image: "/projects/tokosarung.png",
   },
   {
     id: "avanti-merch",
@@ -80,27 +135,46 @@ const projectsData = [
     image: "/projects/avanti.png",
   },
   {
-    id: "toko-sarung",
-    title: "Toko Sarung Inventory & Sales Manager",
-    category: "Desktop",
-    categoryBadge: "Desktop App",
-    icon: Monitor,
+    id: "smartlib",
+    title: "SMARTLIB - Digital Library Management System",
+    category: "UI/UX Design",
+    categoryBadge: "UI/UX Design",
+    icon: PenTool,
     description:
-      "Desktop bookkeeping and stock management application crafted specifically for retail stores and local inventory workflow.",
+      "Comprehensive UI/UX design for a digital library management system enabling administrators to oversee book collections, active members, and borrowing logs seamlessly.",
     keyFeatures: [
-      "Retail stock management",
-      "Sales transaction logging",
-      "Automated receipt generation",
-      "Local SQLite database storage",
+      "Admin dashboard analytics",
+      "Book inventory & catalog management",
+      "Member database tracking",
+      "Borrowing & receipt generation flow",
     ],
-    techStack: ["Java", "Java Swing", "SQLite"],
-    githubUrl: "https://github.com/abdullohmmuttaqin/toko-sarung-app",
+    techStack: ["Figma", "UI/UX", "Prototyping", "Design System"],
+    figmaUrl: "https://www.figma.com",
     demoUrl: "#",
-    image: "/projects/tokosarung.png",
+    image: "/projects/smartlib.png",
+  },
+  {
+    id: "merch-shop",
+    title: "Merch Shop - Band E-Commerce Design",
+    category: "UI/UX Design",
+    categoryBadge: "UI/UX Design",
+    icon: PenTool,
+    description:
+      "Interactive UI/UX design prototype for a music band merchandise storefront focusing on seamless user experience and modern design system.",
+    keyFeatures: [
+      "High-fidelity interactive prototype",
+      "Design system & component library",
+      "User flow & checkout journey",
+      "Mobile-responsive grid layouts",
+    ],
+    techStack: ["Figma", "UI/UX", "Prototyping", "Wireframing"],
+    figmaUrl: "https://www.figma.com",
+    demoUrl: "#",
+    image: "/projects/merchshop.png",
   },
 ];
 
-const categories = ["All", "Mobile", "Web", "Desktop"];
+const categories = ["All", "Mobile", "Web", "Desktop", "UI/UX Design", "IoT & Embedded"];
 
 export default function ProjectGrid() {
   const [activeCategory, setActiveCategory] = useState("All");
@@ -138,7 +212,6 @@ export default function ProjectGrid() {
               {"// FEATURED WORK"}
             </p>
             
-            {/* Judul H2 dengan Garis Bawah Aktif Otomatis */}
             <h2 className="relative inline-block font-[family-name:var(--font-playfair)] text-3xl sm:text-4xl font-bold text-white pb-2">
               Projects & Case Studies
               <span
@@ -149,7 +222,7 @@ export default function ProjectGrid() {
             </h2>
           </div>
 
-          {/* Filter Tabs dengan Efek Membal */}
+          {/* Filter Tabs */}
           <div className="flex flex-wrap items-center gap-2">
             {categories.map((category) => (
               <button
@@ -178,7 +251,6 @@ export default function ProjectGrid() {
               >
                 {/* Top Image Box */}
                 <div className="relative w-full h-56 bg-[#0B132B] overflow-hidden border-b border-white/5">
-                  {/* Gambar Demo Proyek / Fallback Icon jika gambar belum dipasang */}
                   {project.image ? (
                     <img
                       src={project.image}
@@ -191,7 +263,6 @@ export default function ProjectGrid() {
                     </div>
                   )}
 
-                  {/* Dark Gradient Overlay for Readability */}
                   <div className="absolute inset-0 bg-gradient-to-t from-[#1C2541] via-transparent to-black/30 pointer-events-none" />
 
                   {/* Badge Top Left */}
@@ -202,6 +273,18 @@ export default function ProjectGrid() {
 
                   {/* Quick Action Links Top Right */}
                   <div className="absolute top-4 right-4 flex items-center gap-2 z-10">
+                    {project.figmaUrl && (
+                      <a
+                        href={project.figmaUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="p-2 rounded-lg bg-[#0B132B]/80 backdrop-blur-md text-[#94A3B8] hover:text-[#39FF88] border border-white/10 active:scale-90 transition-transform"
+                        aria-label="Figma Prototype"
+                      >
+                        <FigmaIcon className="w-4 h-4" />
+                      </a>
+                    )}
+
                     {project.githubUrl && (
                       <a
                         href={project.githubUrl}
@@ -213,7 +296,8 @@ export default function ProjectGrid() {
                         <GithubIcon className="w-4 h-4" />
                       </a>
                     )}
-                    {project.demoUrl !== "#" && (
+
+                    {project.demoUrl && project.demoUrl !== "#" && (
                       <a
                         href={project.demoUrl}
                         target="_blank"
@@ -237,7 +321,6 @@ export default function ProjectGrid() {
                       {project.description}
                     </p>
 
-                    {/* Key Features List */}
                     <div className="pt-2 space-y-2">
                       <p className="font-mono text-xs font-bold text-[#39FF88] uppercase tracking-wider">
                         Key Features:
@@ -253,7 +336,6 @@ export default function ProjectGrid() {
                     </div>
                   </div>
 
-                  {/* Tech Stack Badges at Bottom */}
                   <div className="flex flex-wrap gap-2 pt-4 border-t border-white/5">
                     {project.techStack.map((tech, tIdx) => (
                       <span
