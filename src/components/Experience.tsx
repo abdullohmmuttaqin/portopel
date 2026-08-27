@@ -24,14 +24,17 @@ const experiences = [
 
 export default function Experience() {
   const [isInView, setIsInView] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
   const sectionRef = useRef<HTMLElement>(null);
+  const timelineRef = useRef<HTMLDivElement>(null);
 
+  // Observer untuk judul Experience
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         setIsInView(entry.isIntersecting);
       },
-      { rootMargin: "-20% 0px -35% 0px", threshold: 0.1 }
+      { rootMargin: "0px 0px -15% 0px", threshold: 0.1 }
     );
 
     if (sectionRef.current) {
@@ -39,6 +42,32 @@ export default function Experience() {
     }
 
     return () => observer.disconnect();
+  }, []);
+
+  // Listener kalkulasi tinggi garis sesuai scroll layar
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!timelineRef.current) return;
+
+      const rect = timelineRef.current.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+
+      // Garis mulai tumbuh ketika titik atas timeline menyentuh 70% tinggi viewport
+      const startPoint = windowHeight * 0.7;
+      const totalHeight = rect.height;
+
+      const currentPosition = startPoint - rect.top;
+      const progress = (currentPosition / totalHeight) * 100;
+
+      // Pembatasan nilai antara 0% sampai 100%
+      const clampedProgress = Math.min(Math.max(progress, 0), 100);
+      setScrollProgress(clampedProgress);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Jalankan sekali di awal load
+
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
@@ -51,7 +80,6 @@ export default function Experience() {
             {"// CAREER & JOURNEY"}
           </p>
           
-          {/* Judul H2 dengan Garis Bawah Aktif Otomatis */}
           <h2 className="relative inline-block font-[family-name:var(--font-playfair)] text-3xl sm:text-4xl font-bold text-white pb-2">
             Experience
             <span
@@ -63,13 +91,30 @@ export default function Experience() {
         </div>
 
         {/* Timeline Container */}
-        <div className="relative border-l border-white/10 ml-3 md:ml-6 space-y-8 pl-6 md:pl-8">
+        <div ref={timelineRef} className="relative ml-3 md:ml-6 space-y-8 pl-6 md:pl-8">
+          
+          {/* Garis Dasar (Track Abu-abu) */}
+          <div className="absolute left-0 top-2 bottom-2 w-[2px] bg-white/10" />
+
+          {/* Garis Hijau Dynamic (Ikut Scroll) */}
+          <div
+            className="absolute left-0 top-2 w-[2px] bg-[#39FF88] shadow-[0_0_10px_#39FF88] transition-all duration-75 ease-out"
+            style={{ height: `${scrollProgress}%` }}
+          />
+
           {experiences.map((exp, index) => (
             <div key={index} className="relative group">
-              {/* Timeline Dot */}
-              <div className="absolute -left-[31px] md:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-[#1C2541] border-2 border-[#39FF88] group-hover:scale-125 transition-transform" />
+              
+              {/* Timeline Dot (Menyala Hijau saat terlewati garis) */}
+              <div
+                className={`absolute -left-[31px] md:-left-[39px] top-1.5 w-4 h-4 rounded-full border-2 transition-all duration-300 ${
+                  scrollProgress > (index / (experiences.length - 1 || 1)) * 80
+                    ? "bg-[#39FF88] border-[#39FF88] scale-110 shadow-[0_0_10px_#39FF88]"
+                    : "bg-[#1C2541] border-[#39FF88]/40"
+                }`}
+              />
 
-              {/* Card Experience dengan Efek Membal */}
+              {/* Card Experience */}
               <div className="p-6 rounded-2xl bg-[#1C2541] border border-white/5 hover:border-[#39FF88]/30 active:scale-[0.98] transition-all duration-150 space-y-3">
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                   <h3 className="font-mono text-lg font-bold text-white">
@@ -89,7 +134,7 @@ export default function Experience() {
                   {exp.description}
                 </p>
 
-                {/* Skill Badges dengan Efek Membal */}
+                {/* Skill Badges */}
                 <div className="flex flex-wrap gap-2 pt-2">
                   {exp.skills.map((skill, sIdx) => (
                     <span
@@ -101,6 +146,7 @@ export default function Experience() {
                   ))}
                 </div>
               </div>
+
             </div>
           ))}
         </div>
