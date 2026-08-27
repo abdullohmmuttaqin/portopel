@@ -13,13 +13,14 @@ const experiences = [
     skills: ["React Native", "Next.js", "PHP", "Java", "SQLite"],
   },
   {
-    role: "Computer Science Student & Project Lead",
-    organization: "Universitas Nahdlatul Ulama Al Ghazali (UNUGHA) Cilacap",
-    period: "2022 - Present",
-    description:
-      "Building robust software architecture for academic research and practical coursework. Collaborating on system analysis, database schema design, and full-stack integration.",
-    skills: ["System Architecture", "Database Design", "Git Workflow"],
-  },
+  role: "Informatics Student & Software Project Contributor",
+  organization:
+    "Universitas Nahdlatul Ulama Al Ghazali (UNUGHA) Cilacap",
+  period: "2022 – Present",
+  description:
+    "Contributing to academic and collaborative software projects throughout the Informatics program, with hands-on experience in system analysis, database design, software development, testing, and version control.",
+  skills: ["System Analysis", "System Architecture", "Database Design", "Git"],
+},
 ];
 
 export default function Experience() {

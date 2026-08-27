@@ -27,14 +27,15 @@ export interface Profile {
 export const profileData: Profile = {
   name: "Abdullah Muhammad Muttaqim",
   initials: "AMM",
-  role: "Software Engineer & Full-Stack Developer",
+  role: "Informatics Student & Software Developer",
   location: "Indonesia",
-  about: "Computer Science student specializing in Full-Stack Web Development, Mobile Applications, and Desktop Systems. Passionate about building end-to-end software solutions with clean, structured architecture.",
+  about:
+    "Informatics student focused on Full-Stack Web Development, Mobile Applications, and Desktop Systems. Passionate about building practical, end-to-end software solutions through academic, independent, and collaborative projects.",
   socials: {
     github: "https://github.com/abdullohmmuttaqin",
     linkedin: "https://linkedin.com/in/abdullohmmuttaqin",
-    email: "abdullah.22eo10034@mhs.unugha.ac.id"
-  }
+    email: "abdullah.22eo10034@mhs.unugha.ac.id",
+  },
 };
 
 export const projectsData: Project[] = [
