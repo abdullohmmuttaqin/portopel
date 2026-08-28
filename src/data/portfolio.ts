@@ -90,6 +90,16 @@ export const projectsData: Project[] = [
     featured: true
   },
   {
+    id: "heart-rate-detector",
+    title: "App-Based Heart Rate Monitoring System",
+    category: "IoT & Embedded",
+    shortDesc: "IoT real-time heart rate monitoring system integrating NodeMCU, ECG/PPG sensors, and mobile application.",
+    fullDesc: "An IoT hardware and mobile integration project developed for health monitoring at UNUGHA Cilacap. Uses NodeMCU (ESP8266) with PPG and AD8232 ECG sensors to measure real-time BPM (Beats Per Minute), displaying live readings on an OLED screen and transmitting data to a mobile app for condition analysis.",
+    techStack: ["NodeMCU ESP8266", "C/C++", "AD8232 ECG Sensor", "PPG Sensor", "OLED Display", "Mobile App"],
+    githubUrl: "https://github.com/abdullohmmuttaqin",
+    featured: true
+  },
+  {
     id: "merch-shop",
     title: "Merch Shop - Band E-Commerce Design",
     category: "UI/UX Design",

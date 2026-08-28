@@ -75,7 +75,7 @@ const projectsData: ProjectItem[] = [
     techStack: ["Next.js 16", "React 19", "Supabase", "Tailwind CSS", "TypeScript"],
     githubUrl: "https://github.com/abdullohmmuttaqin/artomoro-craft",
     demoUrl: "#",
-    image: "/projects/artomoro.png",
+    image: "/projects/artomorocraft.png",
   },
   {
     id: "showroom-app",
@@ -94,7 +94,7 @@ const projectsData: ProjectItem[] = [
     techStack: ["React Native", "Expo", "JavaScript", "AsyncStorage"],
     githubUrl: "https://github.com/abdullohmmuttaqin/ShowroomApp2",
     demoUrl: "#",
-    image: "/projects/showroom.png",
+    image: "/projects/showroomapp.png",
   },
   {
     id: "toko-sarung",
@@ -113,7 +113,7 @@ const projectsData: ProjectItem[] = [
     techStack: ["Java", "Java Swing", "SQLite"],
     githubUrl: "https://github.com/abdullohmmuttaqin/toko-sarung-app",
     demoUrl: "#",
-    image: "/projects/tokosarung.png",
+    image: "/projects/tokosarungapp.png",
   },
   {
     id: "avanti-merch",
@@ -132,7 +132,7 @@ const projectsData: ProjectItem[] = [
     techStack: ["PHP", "MySQL", "Bootstrap", "JavaScript"],
     githubUrl: "https://github.com/abdullohmmuttaqin/Avanti-Merch",
     demoUrl: "#",
-    image: "/projects/avanti.png",
+    image: "/projects/avantimerch.png",
   },
   {
     id: "smartlib",
@@ -152,6 +152,24 @@ const projectsData: ProjectItem[] = [
     figmaUrl: "https://www.figma.com",
     demoUrl: "#",
     image: "/projects/smartlib.png",
+  },
+  {
+    id: "heart-rate-detector",
+    title: "App-Based Heart Rate Monitoring System",
+    category: "IoT & Embedded",
+    categoryBadge: "IoT & Embedded",
+    icon: Cpu,
+    description:
+      "IoT health monitoring system integrating NodeMCU, PPG & AD8232 ECG sensors, OLED display, and a custom mobile app for real-time BPM tracking and condition analysis.",
+    keyFeatures: [
+      "Real-time BPM sensor reading (ECG & PPG)",
+      "Wireless data transmission via NodeMCU",
+      "Dual visual output (OLED Screen & Mobile App)",
+      "Automated normal & abnormal BPM analysis",
+    ],
+    techStack: ["NodeMCU ESP8266", "C/C++", "AD8232 ECG Sensor", "PPG Sensor", "OLED Display", "Mobile App"],
+    githubUrl: "https://github.com/abdullohmmuttaqin",
+    image: "/projects/heartratedetector.png",
   },
   {
     id: "merch-shop",
