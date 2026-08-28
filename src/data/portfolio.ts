@@ -90,6 +90,16 @@ export const projectsData: Project[] = [
     featured: true
   },
   {
+    id: "smart-parking-system",
+    title: "IoT-Based Smart Parking System",
+    category: "IoT & Embedded",
+    shortDesc: "Automated smart parking system featuring RFID access control, servo barrier mechanism, and real-time slot monitoring.",
+    fullDesc: "An IoT-based automated parking solution developed at UNUGHA Cilacap. Utilizes NodeMCU ESP8266, RFID RC522 reader, Servo Motor, and IR sensors to streamline parking management. The system authenticates user RFID cards, automatically operates the barrier gate, and updates real-time parking slot availability to an LCD screen and web/mobile interface.",
+    techStack: ["NodeMCU ESP8266", "RFID RC522", "Servo Motor", "C/C++", "LCD I2C", "Mobile/Web App"],
+    githubUrl: "https://github.com/abdullohmmuttaqin",
+    featured: true
+  },
+  {
     id: "heart-rate-detector",
     title: "App-Based Heart Rate Monitoring System",
     category: "IoT & Embedded",

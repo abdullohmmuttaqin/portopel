@@ -154,6 +154,24 @@ const projectsData: ProjectItem[] = [
     image: "/projects/smartlib.png",
   },
   {
+    id: "smart-parking-system",
+    title: "IoT-Based Smart Parking System",
+    category: "IoT & Embedded",
+    categoryBadge: "IoT & Embedded",
+    icon: Cpu,
+    description:
+      "Automated smart parking solution utilizing NodeMCU ESP8266, RFID RC522 authentication, Servo Motor barrier control, and real-time slot monitoring via LCD and Mobile/Web app.",
+    keyFeatures: [
+      "RFID RC522 card access & authentication",
+      "Automated Servo Motor barrier gate mechanism",
+      "Real-time parking slot detection & tracking",
+      "Multi-platform monitoring (LCD Display & App)",
+    ],
+    techStack: ["NodeMCU ESP8266", "RFID RC522", "Servo Motor", "C/C++", "LCD I2C", "Mobile/Web App"],
+    githubUrl: "https://github.com/abdullohmmuttaqin",
+    image: "/projects/smartparkingsystem.png",
+  },
+  {
     id: "heart-rate-detector",
     title: "App-Based Heart Rate Monitoring System",
     category: "IoT & Embedded",
