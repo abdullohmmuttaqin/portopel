@@ -12,7 +12,7 @@ export default function About() {
       ([entry]) => {
         setIsInView(entry.isIntersecting);
       },
-      { rootMargin: "-20% 0px -35% 0px", threshold: 0.1 }
+      { rootMargin: "0px 0px -15% 0px", threshold: 0.1 }
     );
 
     if (sectionRef.current) {
@@ -30,7 +30,6 @@ export default function About() {
         <div className="space-y-2">
           <p className="font-mono text-sm text-[#39FF88] uppercase tracking-wider">// BIOGRAPHY</p>
           
-          {/* Judul H2 dengan Garis Bawah Aktif Otomatis */}
           <h2 className="relative inline-block font-[family-name:var(--font-playfair)] text-3xl sm:text-4xl font-bold text-white pb-2">
             About Me
             <span
@@ -51,7 +50,7 @@ export default function About() {
             </div>
             <h3 className="font-mono text-lg font-bold text-white">Education</h3>
             <p className="font-sans text-sm text-[#94A3B8] leading-relaxed">
-              Teknik Informatika / Computer Science student at <span className="text-white font-medium">Universitas Nahdlatul Ulama Al Ghazali (UNUGHA)</span>. Focus on software architecture & modern web technologies.
+              Informatics Student at <span className="text-white font-medium">Universitas Nahdlatul Ulama Al Ghazali (UNUGHA)</span>. Focus on software architecture & modern web technologies.
             </p>
           </div>
 
@@ -62,7 +61,7 @@ export default function About() {
             </div>
             <h3 className="font-mono text-lg font-bold text-white">Specialization</h3>
             <p className="font-sans text-sm text-[#94A3B8] leading-relaxed">
-              Full-Stack Web Development (Next.js/React), Mobile Applications (React Native), and Desktop Systems. Passionate about building clean, scalable apps.
+              Full-Stack Web Development, Mobile Applications, Desktop Systems, UI/UX Design, and IoT & Embedded Systems Integration. Dedicated to continuously learning best practices to build clean, well-structured, and scalable applications.
             </p>
           </div>
 
@@ -73,8 +72,7 @@ export default function About() {
             </div>
             <h3 className="font-mono text-lg font-bold text-white">Approach</h3>
             <p className="font-sans text-sm text-[#94A3B8] leading-relaxed">
-              Writing maintainable code with clean architecture, fast UI performance, and seamless user experiences from frontend to database.
-            </p>
+              Striving to write maintainable code, apply clean architecture principles, and deliver smooth user experiences across frontend and backend systems.            </p>
           </div>
 
         </div>
