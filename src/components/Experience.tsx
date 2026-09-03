@@ -5,7 +5,7 @@ import { Calendar } from "lucide-react";
 
 const experiences = [
   {
-    role: "Full-Stack & Mobile Software Developer",
+    role: "Junior Software Developer — Independent Projects",
     organization: "Independent & Personal Projects",
     period: "2023 - Present",
     description:
@@ -13,14 +13,13 @@ const experiences = [
     skills: ["React Native", "Next.js", "PHP", "Java", "SQLite"],
   },
   {
-  role: "Informatics Student & Software Project Contributor",
-  organization:
-    "Universitas Nahdlatul Ulama Al Ghazali (UNUGHA) Cilacap",
-  period: "2022 – Present",
-  description:
-    "Contributing to academic and collaborative software projects throughout the Informatics program, with hands-on experience in system analysis, database design, software development, testing, and version control.",
-  skills: ["System Analysis", "System Architecture", "Database Design", "Git"],
-},
+    role: "Informatics Student & Software Project Contributor",
+    organization: "Universitas Nahdlatul Ulama Al Ghazali (UNUGHA) Cilacap",
+    period: "2022 – Present",
+    description:
+      "Contributing to academic and collaborative software projects throughout the Informatics program, with hands-on experience in system analysis, database design, software development, IoT integration, and version control.",
+    skills: ["System Analysis", "System Architecture", "Database Design", "IoT Systems", "UI/UX Prototyping", "Git"],
+  },
 ];
 
 export default function Experience() {
@@ -29,7 +28,6 @@ export default function Experience() {
   const sectionRef = useRef<HTMLElement>(null);
   const timelineRef = useRef<HTMLDivElement>(null);
 
-  // Observer untuk judul Experience
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -45,7 +43,6 @@ export default function Experience() {
     return () => observer.disconnect();
   }, []);
 
-  // Listener kalkulasi tinggi garis sesuai scroll layar
   useEffect(() => {
     const handleScroll = () => {
       if (!timelineRef.current) return;
@@ -53,20 +50,18 @@ export default function Experience() {
       const rect = timelineRef.current.getBoundingClientRect();
       const windowHeight = window.innerHeight;
 
-      // Garis mulai tumbuh ketika titik atas timeline menyentuh 70% tinggi viewport
       const startPoint = windowHeight * 0.7;
       const totalHeight = rect.height;
 
       const currentPosition = startPoint - rect.top;
       const progress = (currentPosition / totalHeight) * 100;
 
-      // Pembatasan nilai antara 0% sampai 100%
       const clampedProgress = Math.min(Math.max(progress, 0), 100);
       setScrollProgress(clampedProgress);
     };
 
     window.addEventListener("scroll", handleScroll);
-    handleScroll(); // Jalankan sekali di awal load
+    handleScroll();
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -94,10 +89,8 @@ export default function Experience() {
         {/* Timeline Container */}
         <div ref={timelineRef} className="relative ml-3 md:ml-6 space-y-8 pl-6 md:pl-8">
           
-          {/* Garis Dasar (Track Abu-abu) */}
           <div className="absolute left-0 top-2 bottom-2 w-[2px] bg-white/10" />
 
-          {/* Garis Hijau Dynamic (Ikut Scroll) */}
           <div
             className="absolute left-0 top-2 w-[2px] bg-[#39FF88] shadow-[0_0_10px_#39FF88] transition-all duration-75 ease-out"
             style={{ height: `${scrollProgress}%` }}
@@ -106,7 +99,6 @@ export default function Experience() {
           {experiences.map((exp, index) => (
             <div key={index} className="relative group">
               
-              {/* Timeline Dot (Menyala Hijau saat terlewati garis) */}
               <div
                 className={`absolute -left-[31px] md:-left-[39px] top-1.5 w-4 h-4 rounded-full border-2 transition-all duration-300 ${
                   scrollProgress > (index / (experiences.length - 1 || 1)) * 80
@@ -115,7 +107,6 @@ export default function Experience() {
                 }`}
               />
 
-              {/* Card Experience */}
               <div className="p-6 rounded-2xl bg-[#1C2541] border border-white/5 hover:border-[#39FF88]/30 active:scale-[0.98] transition-all duration-150 space-y-3">
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                   <h3 className="font-mono text-lg font-bold text-white">
@@ -135,7 +126,6 @@ export default function Experience() {
                   {exp.description}
                 </p>
 
-                {/* Skill Badges */}
                 <div className="flex flex-wrap gap-2 pt-2">
                   {exp.skills.map((skill, sIdx) => (
                     <span

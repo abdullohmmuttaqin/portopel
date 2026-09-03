@@ -27,7 +27,7 @@ export interface Profile {
 export const profileData: Profile = {
   name: "Abdullah Muhammad Muttaqim",
   initials: "AMM",
-  role: "Informatics Student & Software Developer",
+  role: "Informatics Student | Junior Software Developer",
   location: "Indonesia",
   about:
     "Informatics student focused on Full-Stack Web Development, Mobile Applications, and Desktop Systems. Passionate about building practical, end-to-end software solutions through academic, independent, and collaborative projects.",
@@ -86,7 +86,7 @@ export const projectsData: Project[] = [
     shortDesc: "UI/UX design prototype for digital library administrative management.",
     fullDesc: "Comprehensive UI/UX design for a digital library system enabling administrators to oversee book collections, active members, and borrowing logs.",
     techStack: ["Figma", "UI/UX", "Prototyping", "Design System"],
-    figmaUrl: "https://www.figma.com/design/X3zgrePRclcgLyEgxhz2dT/SMARTLIB-SP-RPL?node-id=0-1",
+    figmaUrl: "https://www.figma.com",
     featured: true
   },
   {
