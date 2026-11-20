@@ -12,7 +12,7 @@ export default function Hero() {
           
           {/* Status Badge */}
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#1C2541] border border-[#39FF88]/20 font-mono text-xs text-[#39FF88]">
-            <span className="w-2 h-2 rounded-full bg-[#39FF88] animate-pulse"></span>
+            <span className="w-2 h-2 rounded-full bg-[#39FF88] animate-[terminal-blink_1.2s_infinite] shadow-[0_0_8px_#39FF88]"></span>
             Available for Opportunities
           </div>
 
