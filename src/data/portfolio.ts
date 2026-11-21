@@ -27,7 +27,7 @@ export interface Profile {
 export const profileData: Profile = {
   name: "Abdullah Muhammad Muttaqim",
   initials: "AMM",
-  role: "Informatics Student | Junior Software Developer",
+  role: "Undergraduate Informatics Student | Aspiring Software Developer",
   location: "Indonesia",
   about:
     "Informatics student focused on Full-Stack Web Development, Mobile Applications, and Desktop Systems. Passionate about building practical, end-to-end software solutions through academic, independent, and collaborative projects.",
